@@ -20,3 +20,7 @@ $(LIBRARY): $(OBJS)
 
 .ccp.o:
 	$(CC) $(CFLAGS) $< -o $@
+
+clean:
+	rm *.o
+	rm $(LIBRARY)

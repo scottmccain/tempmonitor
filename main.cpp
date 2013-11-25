@@ -29,9 +29,9 @@ void log_message(int log_level, const char *szformat, ...) {
 
 int open_db() {
 	const char *server = "localhost";
-	const char *user = "dbouser";
-	const char *password = "81988Dbd!"; /* set me first */
-	const char *database = "servicedb";
+	const char *user = "xxxxx";
+	const char *password = "xxxxx"; /* set me first */
+	const char *database = "xxxxx";
 
 	conn = mysql_init(NULL);
 
