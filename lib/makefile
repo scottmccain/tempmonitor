@@ -8,12 +8,12 @@ OBJS = $(SOURCES:.cpp=.o)
 VERSION=0
 LIBRARY=$(LIBNAME).$(VERSION)
 
+all: $(SOURCES) $(LIBRARY)
+
 install: $(LIBRARY)
 	mv $(LIBRARY) /usr/local/lib/$(LIBRARY)
 	ln -sf /usr/local/lib/$(LIBRARY) /usr/local/lib/$(LIBNAME)
 	ln -sf /usr/local/lib/$(LIBRARY) /usr/local/lib/$(SHAREDNAME)
-
-all: $(SOURCES) $(LIBRARY)
 
 $(LIBRARY): $(OBJS)
 	$(CC) $(LDFLAGS) $(OBJS) -o $@
@@ -24,7 +24,3 @@ $(LIBRARY): $(OBJS)
 clean:
 	rm *.o
 	rm $(LIBRARY)
-<<<<<<< HEAD
-
-=======
->>>>>>> 10467a5d2744d48e62cb0131f4a33dde1ab5a4fb

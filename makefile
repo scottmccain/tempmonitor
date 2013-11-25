@@ -1,5 +1,5 @@
 CC=g++
-LDFLAGS=$(MYSQL_LFLAGS)
+LDFLAGS=$(MYSQL_LFLAGS) -lspidev
 CFLAGS=$(MYSQL_CFLAGS) -c -Wall -I./lib/
 SOURCES=main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
@@ -7,17 +7,15 @@ EXECUTABLE=monitor
 
 all: $(SOURCES) $(EXECUTABLE)
 
-$(EXECUTABLE) : $(OBJECTS)
-<<<<<<< HEAD
-        $(CC) $(LDFLAGS) $(OBJECTS) -o $@
+install: $(EXECUTABLE)
+	mv -f $(EXECUTABLE) /opt/bin/$(EXECUTABLE)
 
-.cpp.o:
-        $(CC) $(CFLAGS) $< -o $@
-=======
+$(EXECUTABLE) : $(OBJECTS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
 .cpp.o:
 	$(CC) $(CFLAGS) $< -o $@
 
->>>>>>> 10467a5d2744d48e62cb0131f4a33dde1ab5a4fb
-
+clean:
+	rm *.o
+	rm $(EXECUTABLE)
