@@ -30,8 +30,8 @@ void log_message(int log_level, const char *szformat, ...) {
 int open_db() {
 	const char *server = "localhost";
 	const char *user = "xxxxx";
-	const char *password = "xxxxx"; /* set me first */
-	const char *database = "xxxxx";
+	const char *password = "xxxxxx"; /* set me first */
+	const char *database = "xxxxxxx";
 
 	conn = mysql_init(NULL);
 

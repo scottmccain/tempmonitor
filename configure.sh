@@ -5,5 +5,3 @@ export MYSQL_LFLAGS
 
 MYSQL_CFLAGS=$(mysql_config --cflags)
 export MYSQL_CFLAGS
-
-

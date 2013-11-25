@@ -8,6 +8,7 @@ EXECUTABLE=monitor
 all: $(SOURCES) $(EXECUTABLE)
 
 install: $(EXECUTABLE)
+	cd lib; make install
 	mv -f $(EXECUTABLE) /opt/bin/$(EXECUTABLE)
 
 $(EXECUTABLE) : $(OBJECTS)
@@ -19,3 +20,4 @@ $(EXECUTABLE) : $(OBJECTS)
 clean:
 	rm *.o
 	rm $(EXECUTABLE)
+	cd lib; make clean
