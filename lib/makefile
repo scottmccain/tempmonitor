@@ -24,4 +24,7 @@ $(LIBRARY): $(OBJS)
 clean:
 	rm *.o
 	rm $(LIBRARY)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 10467a5d2744d48e62cb0131f4a33dde1ab5a4fb
